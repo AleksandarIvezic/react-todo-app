@@ -5,7 +5,7 @@
 > "React To-Do app" is a simple To-Do list created using React library.
 
 
-![screenshot](./public/Screenshot-app.png.png)
+![screenshot](./public/Screenshot-app.png)
 
 ## Built With
 
