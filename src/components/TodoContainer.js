@@ -1,6 +1,7 @@
 import React from "react";
 import TodosList from './TodosList';
 import Header from "./Header";
+import InputTodo from "./InputTodo";
 class TodoContainer extends React.Component {
   state = {
   todos: [
@@ -47,6 +48,7 @@ class TodoContainer extends React.Component {
     return (
       <React.Fragment>
         <Header />
+        <InputTodo />
         <TodosList 
           todos={this.state.todos} 
           handleChangeProps={this.handleChange} 
