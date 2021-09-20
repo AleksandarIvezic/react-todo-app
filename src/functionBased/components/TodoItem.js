@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styles from "./TodoItem.module.css"
 
 const TodoItem = (props) => {
@@ -11,20 +11,16 @@ const TodoItem = (props) => {
 
   const { completed, id, title } = props.todo;
 
-  const [edit, setEdit] = useState({
-    editing: false,
-  })
+  const [editing, setEditing] = useState(false)
 
   const handleEditing = () => {
-    setEdit({
-      editing: true,
-    })
+    setEditing(true)
   };
 
   let viewMode = {};
   let editMode = {};
 
-  if (edit.editing) {
+  if (editing) {
     viewMode.display = "none"
   } else {
     editMode.display = "none"
@@ -32,11 +28,15 @@ const TodoItem = (props) => {
 
   const handleUpdatedDone = (event) => {
     if (event.key === 'Enter') {
-      setEdit({
-        editing: false,
-      })
+      setEditing(false)
     }
   }
+
+  useEffect(() => {
+    return () => {
+      console.log("Cleaning up...")
+    }
+  }, [])
 
   return (
     <li className={styles.item}>
