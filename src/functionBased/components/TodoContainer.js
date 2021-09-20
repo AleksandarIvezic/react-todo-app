@@ -20,17 +20,15 @@ const TodoContainer = () => {
   const [todos, setTodos] = useState(getInitialTodos());
 
   const handleChange = (id) => {
-    setTodos(prevState => {
-      prevState.map((todo) => {
-        if (todo.id === id) {
-          return {
-            ...todo,
-            completed: !todo.completed,
-          }
+    setTodos(prevState => prevState.map((todo) => {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          completed: !todo.completed,
         }
-        return todo;
-      })
-    });
+      }
+      return todo;
+    }));
   };
 
   const delTodo = (id) => {
