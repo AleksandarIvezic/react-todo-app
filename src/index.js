@@ -1,8 +1,8 @@
-import React from "react"
-import ReactDOM from "react-dom"
-import TodoContainer from "./functionBased/components/TodoContainer"
-import './functionBased/App.css'
-import { HashRouter } from "react-router-dom"
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { HashRouter } from 'react-router-dom';
+import TodoContainer from './functionBased/components/TodoContainer';
+import './functionBased/App.css';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -10,4 +10,5 @@ ReactDOM.render(
       <TodoContainer />
     </HashRouter>
   </React.StrictMode>,
-  document.getElementById('root'))
+  document.getElementById('root'),
+);
