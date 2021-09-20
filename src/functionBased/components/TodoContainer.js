@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import TodosList from './TodosList';
 import Header from "./Header";
 import InputTodo from "./InputTodo";
@@ -49,22 +49,23 @@ const TodoContainer = () => {
     )
   }
 
-  // componentDidMount() {
-  //   const temp = localStorage.getItem("todos")
-  //   const loadedTodos = JSON.parse(temp)
-  //   if (loadedTodos) {
-  //     setTodos({
-  //       todos: loadedTodos
-  //     })
-  //   }
-  // }
+  useEffect(() => {
+    console.log('test run')
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   if(prevState.todos !== state.todos) {
-  //     const temp = JSON.stringify(state.todos)
-  //     localStorage.setItem("todos", temp)
-  //   }
-  // }
+    //getting stores items
+    const temp = localStorage.getItem('todos');
+    const loadedTodos = JSON.parse(temp);
+
+    if (loadedTodos) {
+      setTodos(loadedTodos);
+    }
+  }, []
+  );
+
+  useEffect(() => {
+    const temp = JSON.stringify(todos);
+    localStorage.setItem('todos', temp);
+  }, [todos]);
 
   return (
     <div className='container'>
