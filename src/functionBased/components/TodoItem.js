@@ -10,8 +10,9 @@ const TodoItem = (props) => {
     opacity: 0.4,
     textDecoration: 'line-through',
   };
-  const { todos } = props;
-  const { completed, id, title } = todos;
+
+  const { todo } = props;
+  const { completed, id, title } = todo;
   const [editing, setEditing] = useState(false);
   const viewMode = {};
   const editMode = {};
@@ -33,6 +34,7 @@ const TodoItem = (props) => {
   }
 
   useEffect(() => () => {
+    // eslint-disable-next-line
     console.log('Cleaning up...');
   }, []);
 

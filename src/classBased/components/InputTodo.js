@@ -19,6 +19,7 @@ class InputTodo extends Component {
         title: '',
       });
     } else {
+      // eslint-disable-next-line no-alert
       alert('Please write item');
     }
   }

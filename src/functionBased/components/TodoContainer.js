@@ -1,5 +1,3 @@
-// eslint-disable-next-line max-len
-/* eslint no-param-reassign: ["error", { "props": true, "ignorePropertyModificationsFor": ["todo"] }] */
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { Route, Switch } from 'react-router-dom';
@@ -11,9 +9,7 @@ import NotMatch from '../pages/NotMatch';
 import Navbar from './Navbar';
 
 const TodoContainer = () => {
-  // const [todos, setTodos] = useState([]);
   const getInitialTodos = () => {
-    // getting stored items
     const temp = localStorage.getItem('todos');
     const savedTodos = JSON.parse(temp);
     return savedTodos || [];
@@ -52,25 +48,13 @@ const TodoContainer = () => {
     setTodos(
       todos.map((todo) => {
         if (todo.id === id) {
+          // eslint-disable-next-line no-param-reassign
           todo.title = updatedTitle;
         }
         return todo;
       }),
     );
   };
-
-  // useEffect(() => {
-  //   console.log('test run')
-
-  //   //getting stores items
-  //   const temp = localStorage.getItem('todos');
-  //   const loadedTodos = JSON.parse(temp);
-
-  //   if (loadedTodos) {
-  //     setTodos(loadedTodos);
-  //   }
-  // }, []
-  // );
 
   useEffect(() => {
     const temp = JSON.stringify(todos);

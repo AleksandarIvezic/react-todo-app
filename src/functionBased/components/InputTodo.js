@@ -15,6 +15,7 @@ const InputTodo = (props) => {
       props.addTodoProps(title);
       setTitle('');
     } else {
+      // eslint-disable-next-line
       alert('Please write item');
     }
   };
