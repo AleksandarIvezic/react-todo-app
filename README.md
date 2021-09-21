@@ -11,6 +11,9 @@
 
 - React
 
+## Live Demo
+
+[Live Demo Link](https://shinobiwarior.github.io/react-todo-app/)
 
 ## Getting Started
 
