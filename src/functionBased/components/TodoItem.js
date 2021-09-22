@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
 import styles from './TodoItem.module.css';
 
@@ -32,11 +32,6 @@ const TodoItem = (props) => {
   } else {
     editMode.display = 'none';
   }
-
-  useEffect(() => () => {
-    // eslint-disable-next-line
-    console.log('Cleaning up...');
-  }, []);
 
   return (
     <li className={styles.item}>
