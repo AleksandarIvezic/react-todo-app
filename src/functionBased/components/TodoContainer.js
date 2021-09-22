@@ -47,11 +47,11 @@ const TodoContainer = () => {
   const setUpdate = (updatedTitle, id) => {
     setTodos(
       todos.map((todo) => {
+        const todoItem = todo;
         if (todo.id === id) {
-          // eslint-disable-next-line no-param-reassign
-          todo.title = updatedTitle;
+          todoItem.title = updatedTitle;
         }
-        return todo;
+        return todoItem;
       }),
     );
   };
